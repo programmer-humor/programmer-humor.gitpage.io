@@ -7,9 +7,8 @@ async function fetchHumorFeed(page, size) {
     try {
         // const response = await fetch('humor_data.json');
         // const apiUrl = process.env.REAL_API_HOST || 'humor_data.json';
-        // const apiUrl = 'https://real-brave-people.p-e.kr';
-        // const apiUrl = 'https://real-brave-people.p-e.kr';
-        const apiUrl = 'https://dev-brave-people.p-e.kr';
+        const apiUrl = 'https://real-brave-people.p-e.kr';
+        // const apiUrl = 'https://dev-brave-people.p-e.kr';
         // const apiUrl = 'http://localhost:9000';
         const response = await fetch(`${apiUrl}/front/v1/humors?orderType=RECENTLY&langType=ENG,KO&page=${page}&size=${size}`);
         // const response = await fetch(`${apiUrl}/front/v1/humors?orderType=RECENTLY&langType=ENG,KO&page=${page}&size=${size}`, {
