@@ -3,7 +3,7 @@ title: 서버 모니터링 방법
 author: covenant
 date: 24-09-25 17:19:00 +0800
 categories: [Blogging, Code, Datebase]
-tags: [favicon]
+tags: [infra]
 ---
 
 # 서버 모니터링 방법

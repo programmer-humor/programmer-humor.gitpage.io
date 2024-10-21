@@ -3,7 +3,7 @@ title: 시큐어코딩의 실천적 적용
 author: covenant
 date: 24-09-27 06:31:01 +0800
 categories: [Blogging, Code, Datebase]
-tags: [favicon]
+tags: [code]
 ---
 
 # 시큐어 코딩의 실천적 적용

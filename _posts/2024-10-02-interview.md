@@ -3,7 +3,7 @@ title: 개발자 면접을 잘 준비하는 방법
 author: covenant
 date: 24-09-22 01:31:00 +0800
 categories: [Blogging, Interview]
-tags: [favicon]
+tags: [job]
 ---
 
 # 개발자 면접을 잘 준비하는 방법
