@@ -10,6 +10,8 @@ _site
 
 # RubyGems
 *.gem
+Gemfile.lock
+
 
 # NPM dependencies
 node_modules
