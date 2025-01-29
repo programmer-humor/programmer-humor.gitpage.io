@@ -12,8 +12,8 @@ async function fetchHumorFeed(page, size) {
         // const apiUrl = 'http://localhost:9000';
         const response = await fetch(`${apiUrl}/front/v1/humors?orderType=RECENTLY&langType=ENG,KO&page=${page}&size=${size}`);
         // const response = await fetch(`${apiUrl}/front/v1/humors?orderType=RECENTLY&langType=ENG,KO&page=${page}&size=${size}`, {
-        //     mode: 'cors',
-        //     credentials: 'include'
+            // mode: 'cors',
+            // credentials: 'include'
         //   });
 
         if (!response.ok) {
@@ -31,7 +31,7 @@ async function fetchHumorFeed(page, size) {
 function createFeedHTML(feedItem) {
     const imageListHTML = feedItem.image_list.map(img => 
         `<div class="swiper-slide">
-            <img src="${img.image_url}" alt="유머 이미지 ${img.seq}" loading="lazy">
+            <img src="${img.image_url}" alt="유머 이미지 ${img.seq}" loading="lazy" onclick="openModal('${img.image_url}')">
          </div>`
     ).join('');
 
@@ -106,8 +106,39 @@ function handleScroll() {
     }
 }
 
+// 모달 관련 함수 추가
+function openModal(imageUrl) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    modal.style.display = "block";
+    modalImg.src = imageUrl;
+}
+
 // 초기 로드
-document.addEventListener('DOMContentLoaded', loadMoreFeed);
+document.addEventListener('DOMContentLoaded', () => {
+    loadMoreFeed();
+
+    // 모달 닫기 이벤트 설정
+    const modal = document.getElementById('imageModal');
+    const closeBtn = document.getElementsByClassName('modal-close')[0];
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === "block") {
+            modal.style.display = "none";
+        }
+    });
+});
 
 // 스크롤 이벤트 리스너 추가
 window.addEventListener('scroll', handleScroll);
