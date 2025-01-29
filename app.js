@@ -31,7 +31,7 @@ async function fetchHumorFeed(page, size) {
 function createFeedHTML(feedItem) {
     const imageListHTML = feedItem.image_list.map(img => 
         `<div class="swiper-slide">
-            <img src="${img.image_url}" alt="유머 이미지 ${img.seq}" loading="lazy" onclick="openModal('${img.image_url}')">
+            <img src="${img.image_url}" alt="유머 이미지 humor_id:${feedItem.humor_id} seq:${img.seq}" loading="lazy" onclick="openModal('${img.image_url}')">
          </div>`
     ).join('');
 
